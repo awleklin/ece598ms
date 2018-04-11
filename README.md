@@ -1,2 +1,2 @@
 # ece598ms
-Exploring the Memory Hierarchy of Wearables
+A Case Study in Mobile Device Memory Hierarchies
