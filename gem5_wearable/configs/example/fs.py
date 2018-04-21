@@ -106,7 +106,8 @@ def build_test_system(np):
                                  external_memory=
                                    options.external_memory_system,
                                  ruby=options.ruby,
-                                 security=options.enable_security_extensions)
+                                 security=options.enable_security_extensions,
+                                 sdimage=options.sd_image)
         if options.enable_context_switch_stats_dump:
             test_sys.enable_context_switch_stats_dump = True
     else:

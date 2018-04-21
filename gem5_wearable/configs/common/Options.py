@@ -362,6 +362,8 @@ def addFSOptions(parser):
     # Disk Image Options
     parser.add_option("--disk-image", action="store", type="string", default=None,
                       help="Path to the disk image to use.")
+    parser.add_option("--sd-image", action="store", type="string", default=None,
+                      help="Path to the sd image to use.")
     parser.add_option("--root-device", action="store", type="string", default=None,
                       help="OS device name for root partition")
 

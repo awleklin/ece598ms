@@ -207,7 +207,7 @@ def makeSparcSystem(mem_mode, mdesc=None, cmdline=None):
 def makeArmSystem(mem_mode, machine_type, num_cpus=1, mdesc=None,
                   dtb_filename=None, bare_metal=False, cmdline=None,
                   external_memory="", ruby=False, security=False,
-                  ignore_dtb=False):
+                  ignore_dtb=False, sdimage=False):
     assert machine_type
 
     default_dtbs = {
@@ -271,15 +271,19 @@ def makeArmSystem(mem_mode, machine_type, num_cpus=1, mdesc=None,
 
     self.cf0 = CowIdeDisk(driveID='master')
     self.cf0.childImage(mdesc.disk())
+
+    if sdimage != False:
+        self.cf2 = CoWIdeDisk(driveID='master')
+        self.cf2.childImage(disk(sdimage))
     # Old platforms have a built-in IDE or CF controller. Default to
     # the IDE controller if both exist. New platforms expect the
     # storage controller to be added from the config script.
     if hasattr(self.realview, "ide"):
-        self.realview.ide.disks = [self.cf0]
+        self.realview.ide.disks = [self.cf0, self.cf2]
     elif hasattr(self.realview, "cf_ctrl"):
-        self.realview.cf_ctrl.disks = [self.cf0]
+        self.realview.cf_ctrl.disks = [self.cf0, self.cf2]
     else:
-        self.pci_ide = IdeController(disks=[self.cf0])
+        self.pci_ide = IdeController(disks=[self.cf0, self.cf2])
         pci_devices.append(self.pci_ide)
 
     self.mem_ranges = []
