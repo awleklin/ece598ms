@@ -1,8 +1,7 @@
 TARGET = parser
-LIBS = -I/usr/local/include -L/usr/lib/x86_64-linux-gnu/ -lboost_regex -lboost_system -lfolly
-LIBS = 
+LIBS = -L/usr/local/lib -I/usr/local/include
 CC = g++
-CFLAGS = -std=c++14 -g -Wall
+CFLAGS = -std=c++11 -g -Wall
 
 .PHONY: default all clean
 

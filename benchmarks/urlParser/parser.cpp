@@ -1,7 +1,6 @@
 #include <iostream>
-#include <stdlib.h>
-#include <boost/regex.hpp>
-#include <folly/Uri.h>
+#include <vector>
+#include "parser.hh"
 
 #define ARGCOUNT 2
 
@@ -11,12 +10,17 @@ int main(int argc, char** argv)
 {
 	if(argc != ARGCOUNT)
 	{
-		cout << "Error: Only 1 argument must be provided." << endl;
+		std::cout << "Error: Only 1 argument must be provided." << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
-	folly::Uri folly("https://facebook.com/asdsdf/17312647.html");
-	folly.scheme();
-	folly.host();
-	folly.path();
+	for(uint32_t itr = 0; itr < (uint32_t)atoi(argv[1]); itr++)
+	{
+		URI userURI = URI();
+		userURI.Randomize();
+		userURI.getScheme();
+		userURI.getHost();
+		userURI.getLocation();
+	}
+	return 0;
 }
