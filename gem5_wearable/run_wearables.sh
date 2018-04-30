@@ -2,28 +2,37 @@
 
 GEM5_HOME=$M5_PATH
 CMD=
+USEOPT=
 OPTS=
 
 if [ "$1" == "fitness" ]; then
   CMD=./benchmarks/fitnessTrack/fitnessTrack
 elif [ "$1" == "urlparser" ]; then
   CMD=./benchmarks/urlParser/parser
+  USEOPT=-o
   OPTS='-o 1000'
 elif [ "$1" == "x264" ]; then
   CMD=./benchmarks/x264/example
+  USEOPT=-o
   OPTS='-o 1'
 elif [ "$1" == "aes" ]; then
   CMD=./benchmarks/locusApps/testbench/aes/aes
 elif [ "$1" == "astar" ]; then
   CMD=./benchmarks/locusApps/testbench/astar/astar
-# elif [ "$1" == "2dconv" ]; then
-#   CMD=./benchmarks/locusApps/testbench/2dconv/2dconv
-# elif [ "$1" == "ecg" ]; then
-#   CMD=./benchmarks/locusApps/testbench/ecg/ecg
-# elif [ "$1" == "histogram" ]; then
-#   CMD=./benchmarks/locusApps/testbench/histogram/histogram
-# elif [ "$1" == "svm" ]; then	
-#   CMD=./benchmarks/locusApps/testbench/svm/svm
+elif [ "$1" == "2dconv" ]; then
+  CMD=./benchmarks/locusApps/testbench/2dconv/2dconv
+elif [ "$1" == "ecg" ]; then
+  CMD=./benchmarks/locusApps/testbench/ecg/ecg
+elif [ "$1" == "histogram" ]; then
+  CMD=./benchmarks/locusApps/testbench/histogram/histogram
+elif [ "$1" == "svm" ]; then	
+  CMD=./benchmarks/locusApps/testbench/svm/svm
+# elif [ "$1" == "soplex" ]; then	
+#   CMD=./benchmarks/spec/soplex/soplex_base.arm
+#   USEOPT=-o
+#   OPTS="-o \'-m10000 ./benchmarks/soplex/test.mps\'"
+elif [ "$1" == "blackscholes" ]; then	
+  CMD=./benchmarks/spec/blackscholes
 fi
 
 # Call gem5 ARM with a single core and Qualcomm Snapdragon 410C/ARMv7 Cortex A53 Configurations
