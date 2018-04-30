@@ -93,9 +93,9 @@ class O3_ARM_v7a_FUP(FUPool):
 
 # Bi-Mode Branch Predictor
 class O3_ARM_v7a_BP(BiModeBP):
-    globalPredictorSize = 8192
+    globalPredictorSize = 4096
     globalCtrBits = 2
-    choicePredictorSize = 8192
+    choicePredictorSize = 4096
     choiceCtrBits = 2
     BTBEntries = 2048
     BTBTagSize = 18
@@ -103,11 +103,11 @@ class O3_ARM_v7a_BP(BiModeBP):
     instShiftAmt = 2
 
 class O3_ARM_v7a_3(DerivO3CPU):
-    LQEntries = 16
-    SQEntries = 16
+    LQEntries = 4
+    SQEntries = 4
     LSQDepCheckShift = 0
-    LFSTSize = 1024
-    SSITSize = 1024
+    LFSTSize = 512
+    SSITSize = 512
     decodeToFetchDelay = 1
     renameToFetchDelay = 1
     iewToFetchDelay = 1
@@ -118,30 +118,30 @@ class O3_ARM_v7a_3(DerivO3CPU):
     iewToRenameDelay = 1
     commitToRenameDelay = 1
     commitToIEWDelay = 1
-    fetchWidth = 3
-    fetchBufferSize = 16
+    fetchWidth = 2
+    fetchBufferSize = 4
     fetchToDecodeDelay = 3
-    decodeWidth = 3
+    decodeWidth = 2
     decodeToRenameDelay = 2
-    renameWidth = 3
+    renameWidth = 2
     renameToIEWDelay = 1
     issueToExecuteDelay = 1
-    dispatchWidth = 6
-    issueWidth = 8
-    wbWidth = 8
+    dispatchWidth = 2
+    issueWidth = 2
+    wbWidth = 2
     fuPool = O3_ARM_v7a_FUP()
     iewToCommitDelay = 1
     renameToROBDelay = 1
-    commitWidth = 8
-    squashWidth = 8
+    commitWidth = 2
+    squashWidth = 2
     trapLatency = 13
     backComSize = 5
     forwardComSize = 5
-    numPhysIntRegs = 128
+    numPhysIntRegs = 64
     numPhysFloatRegs = 192
     numPhysVecRegs = 48
-    numIQEntries = 32
-    numROBEntries = 40
+    numIQEntries = 16
+    numROBEntries = 20
 
     switched_out = False
     branchPred = O3_ARM_v7a_BP()
