@@ -7,7 +7,7 @@ includedir=${prefix}/include
 SYS_ARCH=ARM
 SYS=LINUX
 CC=/usr/bin/arm-linux-gnueabihf-gcc
-CFLAGS=-Wno-maybe-uninitialized -Wshadow -O3 -ffast-math  -Wall -I. -I$(SRCPATH) -march=armv7-a -std=gnu99 -D_GNU_SOURCE -fomit-frame-pointer -fno-tree-vectorize
+CFLAGS=-Wno-maybe-uninitialized -Wshadow -O3 -ffast-math  -Wall -I. -I$(SRCPATH) -march=armv7-a -std=gnu99 -D_GNU_SOURCE -fomit-frame-pointer -fno-tree-vectorize -static
 COMPILER=GNU
 COMPILER_STYLE=GNU
 DEPMM=-MM -g0

@@ -1,1 +1,1 @@
-arm-linux-gnueabi-g++ fft.cpp complex.cpp main.cpp -o ecg
+arm-linux-gnueabi-g++ fft.cpp complex.cpp main.cpp --static -o ecg

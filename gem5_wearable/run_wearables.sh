@@ -1,18 +1,37 @@
 #!/bin/bash
 
 GEM5_HOME=$M5_PATH
-SCRIPT_HOME=$GEM5_HOME/asimbench_boot_scripts
-KERNEL=$GEM5_HOME/binaries/vmlinux.smp.ics.arm.asimbench.2.6.35
-DTB=$GEM5_HOME/binaries/armv7_gem5_v1_2cpu.dtb
-IMAGE=$GEM5_HOME/disks/ARMv7a-ICS-Android.SMP.Asimbench-v3.img
+CMD=
+OPTS=
 
-if [ "$1" == "adobe" ]; then
-  SCRIPT=$GEM5_HOME/$SCRIPT_HOME/adobe.rcS
-elif [ "$1" == "mcf" ]; then
-  SCRIPT=$GEM5_HOME/$SCRIPT_HOME/mcf.sh
-elif [ "$1" == "soplex" ]; then
-  SCRIPT=$GEM5_HOME/$SCRIPT_HOME/soplex.sh
+if [ "$1" == "fitness" ]; then
+  CMD=./benchmarks/fitnessTrack/fitnessTrack
+elif [ "$1" == "urlparser" ]; then
+  CMD=./benchmarks/urlParser/parser
+  OPTS='-o 1000'
+elif [ "$1" == "x264" ]; then
+  CMD=./benchmarks/x264/example
+  OPTS='-o 1'
+elif [ "$1" == "aes" ]; then
+  CMD=./benchmarks/locusApps/testbench/aes/aes
+elif [ "$1" == "astar" ]; then
+  CMD=./benchmarks/locusApps/testbench/astar/astar
+# elif [ "$1" == "2dconv" ]; then
+#   CMD=./benchmarks/locusApps/testbench/2dconv/2dconv
+# elif [ "$1" == "ecg" ]; then
+#   CMD=./benchmarks/locusApps/testbench/ecg/ecg
+# elif [ "$1" == "histogram" ]; then
+#   CMD=./benchmarks/locusApps/testbench/histogram/histogram
+# elif [ "$1" == "svm" ]; then	
+#   CMD=./benchmarks/locusApps/testbench/svm/svm
 fi
 
-$GEM5_HOME/build/ARM/gem5.opt --debug-flags=Cache,TLB --debug-file=$GEM5_HOME/m5out/debug.log $GEM5_HOME/configs/example/fs.py --disk-image=$IMAGE --kernel=$KERNEL --dtb-filename=$DTB --script=$SCRIPT --num-cpus=2 --caches --l2cache --cpu-type=O3_ARM_v7a_3 
+# Call gem5 ARM with a single core and Qualcomm Snapdragon 410C/ARMv7 Cortex A53 Configurations
+# ArmTLB.py has parameters for the TLB (1 Level, Separate iTLB/dTLB 256 entries each, 1kiB Walker Cache)
+$GEM5_HOME/build/ARM/gem5.opt $GEM5_HOME/configs/example/se.py 				  \
+					--num-cpus=1 --cpu-type=O3_ARM_v7a_3 --cpu-clock=1.2GHz   \
+					--caches --l2cache --l1d_size=64kB --l1i_size=32kB		  \
+					--l2_size=512kB --l1d_assoc=4 --l1i_assoc=2 --l2_assoc=16 \
+ 					--mem-type=LPDDR3_1600_1x32 --mem-size=1GB				  \
+ 					 -c $CMD $OPTS
 
