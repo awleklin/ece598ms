@@ -44,5 +44,5 @@ $GEM5_HOME/build/ARM/gem5.opt $GEM5_HOME/configs/example/se.py 				  \
 					--caches --l1d_size=1kB --l1i_size=1kB		  \
 					--l1d_assoc=4 --l1i_assoc=2 \
  					--mem-type=LPDDR3_1600_1x32 --mem-size=1GB				  \
- 					 -c $CMD $OPTS
+ 					 -c $CMD $OPTS  > /dev/null 2>&1 &
 
