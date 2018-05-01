@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "unistd.h"
 #include "time.h"
-#include <gsl/gsl_histogram.h>
+#include "gsl_histogram.h"
 #define minBPM 0
 #define maxBPM 220
 #define binsBPM 220
@@ -16,6 +16,7 @@ int main()
     volatile int x,second;
     float bpm[runTime-intervalBPM] = {0};
     int beats[runTime*sampleFreq];
+    FILE* fout = tmpfile();
    
     // Loop through seconds for given run time
     for(second=0;second<runTime;second++){
@@ -48,7 +49,7 @@ int main()
         
         if(second==(runTime-1)){
             // Prints the histogram
-            gsl_histogram_fprintf (stdout, h, "%g", "%g");
+            gsl_histogram_fprintf (fout, h, "%g", "%g");
         }
         gsl_histogram_free (h);
         
@@ -59,5 +60,6 @@ int main()
        }
     }
 
+    fclose(fout);
     return 0;
 }
