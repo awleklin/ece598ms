@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "unistd.h"
 #include "time.h"
-#include "gsl/histogram/gsl_histogram.h"
+#include "gsl_histogram.h"
 #define minBPM 0
 #define maxBPM 220
 #define binsBPM 220
@@ -59,6 +59,7 @@ int main()
             msec = difference * 1000 / CLOCKS_PER_SEC;
        }
     }
+
     fclose(fout);
     return 0;
 }

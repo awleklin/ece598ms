@@ -32,7 +32,7 @@
 #define m5_op 0x2
 #define m5_op3 0x37
 
-#include <gem5/asm/generic/m5ops.h>
+#include "m5ops.h"
 
 #define INST(func, rs1, rs2, rd) \
         .long (m5_op) << 30 | (rd) << 25 | (m5_op3) << 19 | (func) << 7 |  \
@@ -49,10 +49,10 @@ func:
 #define END(func)         \
         .size    func, (.-func)
 
-#define DEBUGBREAK INST(M5OP_DEBUG_BREAK, 0, 0, 0)
-#define M5EXIT INST(M5OP_EXIT, 0, 0, 0)
-#define PANIC INST(M5OP_PANIC, 0, 0, 0)
-#define READFILE INST(M5OP_READ_FILE, 0, 0, 0)
+#define DEBUGBREAK INST(debugbreak_func, 0, 0, 0)
+#define M5EXIT INST(exit_func, 0, 0, 0)
+#define PANIC INST(panic_func, 0, 0, 0)
+#define READFILE INST(readfile_func, 0, 0, 0)
 
 LEAF(m5_exit)
     retl
@@ -64,51 +64,51 @@ LEAF(m5_panic)
     PANIC
 END(m5_panic)
 
-LEAF(m5_read_file)
+LEAF(m5_readfile)
     retl
     READFILE
-END(m5_read_file)
+END(m5_readfile)
 
-LEAF(m5_debug_break)
+LEAF(m5_debugbreak)
     retl
     DEBUGBREAK
-END(m5_debug_break)
+END(m5_debugbreak)
 
 /* !!!!!! All code below here just panics !!!!!! */
-LEAF(m5_arm)
+LEAF(arm)
     retl
     PANIC
-END(m5_arm)
+END(arm)
 
-LEAF(m5_quiesce)
+LEAF(quiesce)
     retl
     PANIC
-END(m5_quiesce)
+END(quiesce)
 
-LEAF(m5_quiesce_ns)
+LEAF(quiesceNs)
     retl
     PANIC
-END(m5_quiesce_ns)
+END(quiesceNs)
 
-LEAF(m5_quiesce_cycle)
+LEAF(quiesceCycle)
     retl
     PANIC
-END(m5_quiesce_cycle)
+END(quiesceCycle)
 
-LEAF(m5_quiesce_time)
+LEAF(quiesceTime)
     retl
     PANIC
-END(m5_quiesce_time)
+END(quiesceTime)
 
-LEAF(m5_init_param)
+LEAF(m5_initparam)
     retl
     PANIC
-END(m5_init_param)
+END(m5_initparam)
 
-LEAF(m5_load_symbol)
+LEAF(m5_loadsymbol)
     retl
     PANIC
-END(m5_load_symbol)
+END(m5_loadsymbol)
 
 LEAF(m5_reset_stats)
     retl
@@ -120,25 +120,25 @@ LEAF(m5_dump_stats)
     PANIC
 END(m5_dump_stats)
 
-LEAF(m5_dump_reset_stats)
+LEAF(m5_dumpreset_stats)
     retl
     PANIC
-END(m5_dump_reset_stats)
+END(m5_dumpreset_stats)
 
 LEAF(m5_checkpoint)
     retl
     PANIC
 END(m5_checkpoint)
 
-LEAF(m5_switch_cpu)
+LEAF(m5_switchcpu)
     retl
     PANIC
-END(m5_switch_cpu)
+END(m5_switchcpu)
 
-LEAF(m5_add_symbol)
+LEAF(m5_addsymbol)
     retl
     PANIC
-END(m5_add_symbol)
+END(m5_addsymbol)
 
 LEAF(m5_anbegin)
     retl
