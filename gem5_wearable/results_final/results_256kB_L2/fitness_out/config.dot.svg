@@ -74,7 +74,7 @@
 </g>
 </g>
 <g id="clust65" class="cluster"><title>cluster_system_cpu_dtb</title>
-<g id="a_clust65"><a xlink:title="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;256&#10;sys&#61;system&#10;walker&#61;system.cpu.dtb.walker">
+<g id="a_clust65"><a xlink:title="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;16&#10;sys&#61;system&#10;walker&#61;system.cpu.dtb.walker">
 <path fill="#bab6ae" stroke="#000000" d="M622,-671C622,-671 742,-671 742,-671 748,-671 754,-677 754,-683 754,-683 754,-804 754,-804 754,-810 748,-816 742,-816 742,-816 622,-816 622,-816 616,-816 610,-810 610,-804 610,-804 610,-683 610,-683 610,-677 616,-671 622,-671"/>
 <text text-anchor="middle" x="682" y="-800.8" font-family="Arial" font-size="14.00" fill="#000000">dtb </text>
 <text text-anchor="middle" x="682" y="-785.8" font-family="Arial" font-size="14.00" fill="#000000">: ArmTLB</text>
@@ -98,7 +98,7 @@
 </g>
 </g>
 <g id="clust71" class="cluster"><title>cluster_system_cpu_itb</title>
-<g id="a_clust71"><a xlink:title="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;256&#10;sys&#61;system&#10;walker&#61;system.cpu.itb.walker">
+<g id="a_clust71"><a xlink:title="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;16&#10;sys&#61;system&#10;walker&#61;system.cpu.itb.walker">
 <path fill="#bab6ae" stroke="#000000" d="M417,-671C417,-671 537,-671 537,-671 543,-671 549,-677 549,-683 549,-683 549,-804 549,-804 549,-810 543,-816 537,-816 537,-816 417,-816 417,-816 411,-816 405,-810 405,-804 405,-804 405,-683 405,-683 405,-677 411,-671 417,-671"/>
 <text text-anchor="middle" x="477" y="-800.8" font-family="Arial" font-size="14.00" fill="#000000">itb </text>
 <text text-anchor="middle" x="477" y="-785.8" font-family="Arial" font-size="14.00" fill="#000000">: ArmTLB</text>

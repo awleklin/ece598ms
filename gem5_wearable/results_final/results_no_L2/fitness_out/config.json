@@ -171,7 +171,7 @@
                     }, 
                     "path": "system.cpu.itb", 
                     "type": "ArmTLB", 
-                    "size": 256
+                    "size": 16
                 }, 
                 "fetchWidth": 2, 
                 "max_loads_all_threads": 0, 
@@ -1101,7 +1101,7 @@
                     }, 
                     "path": "system.cpu.dtb", 
                     "type": "ArmTLB", 
-                    "size": 256
+                    "size": 16
                 }, 
                 "numROBEntries": 20, 
                 "fetchQueueSize": 32, 

@@ -783,7 +783,7 @@ fontsize=14;
 label="dtb \n: ArmTLB";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;256&#10;sys&#61;system&#10;walker&#61;system.cpu.dtb.walker";
+tooltip="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;16&#10;sys&#61;system&#10;walker&#61;system.cpu.dtb.walker";
 subgraph cluster_system_cpu_dtb_walker {
 color="#000000";
 fillcolor="#9f9c95";
@@ -858,7 +858,7 @@ fontsize=14;
 label="itb \n: ArmTLB";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;256&#10;sys&#61;system&#10;walker&#61;system.cpu.itb.walker";
+tooltip="eventq_index&#61;0&#10;is_stage2&#61;false&#10;size&#61;16&#10;sys&#61;system&#10;walker&#61;system.cpu.itb.walker";
 subgraph cluster_system_cpu_itb_walker {
 color="#000000";
 fillcolor="#9f9c95";

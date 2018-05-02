@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TLB=32TLB
+TLB=16TLB
 
 mkdir results_512kB_L2_$TLB
 ./run_wearables512kB.sh urlparser
