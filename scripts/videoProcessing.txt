@@ -1,0 +1,30 @@
+ Performance counter stats for 'taskset -c 1 ./video_processing/process 3':
+
+      18963.296770      task-clock (msec)         #    0.952 CPUs utilized          
+             1,301      context-switches          #    0.069 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+               233      page-faults               #    0.012 K/sec                  
+    22,813,744,304      cycles                    #    1.203 GHz                      (69.96%)
+    17,049,502,071      instructions              #    0.75  insn per cycle           (70.01%)
+     1,572,532,591      branches                  #   82.925 M/sec                    (70.02%)
+        10,677,331      branch-misses             #    0.68% of all branches          (70.00%)
+     6,359,390,084      L1-dcache-loads           #  335.353 M/sec                    (70.02%)
+        79,929,279      L1-dcache-load-misses     #    1.26% of all L1-dcache hits    (70.02%)
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+     7,903,335,273      L1-icache-loads           #  416.770 M/sec                    (70.03%)
+        19,568,540      L1-icache-load-misses                                         (60.01%)
+   <not supported>      dTLB-loads                                                  
+            23,483      dTLB-load-misses                                              (59.98%)
+   <not supported>      iTLB-loads                                                  
+             2,478      iTLB-load-misses                                              (59.97%)
+
+      19.929616503 seconds time elapsed
+
+Total Mappings: 773, Forged Mappings: 773
+Groupable: 0, Exlusive: 773
+Groupable Breakdown: RO: 0, R/W: 0
+Exclusive Breakdown: RO: 87, R/W: 686
+Hugepages: 0, Estimated CoW: 0
+Present: 773, Active: 176, Referenced: 1, LRU: 262
+Groupable Flagged-Shared: 0, Groupable Flagged-Exclusive: 0

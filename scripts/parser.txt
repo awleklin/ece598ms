@@ -1,0 +1,30 @@
+      12604.296558      task-clock (msec)         #    0.999 CPUs utilized          
+               877      context-switches          #    0.070 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+               150      page-faults               #    0.012 K/sec                  
+    15,191,464,659      cycles                    #    1.205 GHz                      (69.95%)
+    14,430,583,294      instructions              #    0.95  insn per cycle           (70.02%)
+     2,589,392,030      branches                  #  205.437 M/sec                    (70.03%)
+        46,722,004      branch-misses             #    1.80% of all branches          (70.04%)
+     4,679,103,004      L1-dcache-loads           #  371.231 M/sec                    (70.05%)
+           684,039      L1-dcache-load-misses     #    0.01% of all L1-dcache hits    (70.04%)
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+    10,169,472,900      L1-icache-loads           #  806.826 M/sec                    (70.05%)
+        21,825,846      L1-icache-load-misses                                         (60.00%)
+   <not supported>      dTLB-loads                                                  
+               128      dTLB-load-misses                                              (59.97%)
+   <not supported>      iTLB-loads                                                  
+               105      iTLB-load-misses                                              (59.94%)
+
+      12.621712808 seconds time elapsed
+
+Total Mappings: 561, Forged Mappings: 561
+Groupable: 0, Exlusive: 561
+Groupable Breakdown: RO: 0, R/W: 0
+Exclusive Breakdown: RO: 533, R/W: 28
+Hugepages: 0, Estimated CoW: 0
+Present: 561, Active: 559, Referenced: 516, LRU: 549
+Groupable Flagged-Shared: 0, Groupable Flagged-Exclusive: 0
+
+

@@ -1,0 +1,31 @@
+ Performance counter stats for 'taskset -c 1 ./fitnessTrack/fitnessTrack':
+
+     120569.591316      task-clock (msec)         #    0.999 CPUs utilized          
+             9,025      context-switches          #    0.075 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+               148      page-faults               #    0.001 K/sec                  
+   145,422,130,182      cycles                    #    1.206 GHz                      (69.99%)
+    97,271,399,090      instructions              #    0.67  insn per cycle           (70.00%)
+    13,528,391,894      branches                  #  112.204 M/sec                    (70.00%)
+     1,149,533,060      branch-misses             #    8.50% of all branches          (70.00%)
+    44,545,144,574      L1-dcache-loads           #  369.456 M/sec                    (70.00%)
+         2,465,320      L1-dcache-load-misses     #    0.01% of all L1-dcache hits    (70.01%)
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+    75,384,313,587      L1-icache-loads           #  625.235 M/sec                    (70.00%)
+       700,369,691      L1-icache-load-misses                                         (60.00%)
+   <not supported>      dTLB-loads                                                  
+               287      dTLB-load-misses                                              (60.00%)
+   <not supported>      iTLB-loads                                                  
+               425      iTLB-load-misses                                              (59.99%)
+
+     120.702601464 seconds time elapsed
+
+Total Mappings: 424, Forged Mappings: 424
+Groupable: 0, Exlusive: 424
+Groupable Breakdown: RO: 0, R/W: 0
+Exclusive Breakdown: RO: 385, R/W: 39
+Hugepages: 0, Estimated CoW: 0
+Present: 424, Active: 422, Referenced: 378, LRU: 413
+Groupable Flagged-Shared: 0, Groupable Flagged-Exclusive: 0
+
