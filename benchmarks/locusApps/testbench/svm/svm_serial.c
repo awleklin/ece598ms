@@ -5,15 +5,6 @@
 #include <string.h>
 #include <unistd.h>
 
-// IF targeted at arm include DUMP
-#ifdef __arm__
-#define DUMP
-#endif
-
-#ifdef DUMP
-#include <m5op.h>
-#endif
-
 #define MAT_DIM 4
 #define NUM_THREADS 4
 #define NUM_INPUTS 50
@@ -141,11 +132,6 @@ int main(int argc, char *argv[])
     //Start threads
     int thread_id;
 
-	#ifdef DUMP
-		m5_dump_stats(0, 0);
-		m5_reset_stats(0, 0);
-	#endif
-
     for (i = 0; i < NUM_INPUTS; ++i)
     {
         //for(thread_id=0; thread_id < NUM_THREADS; thread_id++){
@@ -153,12 +139,6 @@ int main(int argc, char *argv[])
         //}
 
     }
-
-	#ifdef DUMP
-		m5_dump_stats(0, 0);
-		m5_reset_stats(0, 0);
-	#endif
-
 
   	for (i = 0; i < NUM_THREADS; ++i)
   	{
